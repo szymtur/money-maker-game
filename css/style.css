@@ -41,6 +41,28 @@ body {
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: center;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+  animation-duration: 1500ms; 
+  animation-timing-function: ease;
+}
+
+@keyframes pulse {
+  0% {
+    background-size: 80%;
+  }
+  25% {
+    background-size: 82%;
+  }
+  50% {
+    background-size: 84%;
+  }
+  75% {
+    background-size: 82%; 
+  }
+  100% {
+    background-size: 80%;
+  }
 }
 
 .invisible {
