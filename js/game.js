@@ -141,7 +141,7 @@ function Game(){
 
    //wprawienie Furry'ego w ruch
    this.startGame = function(){
-      this.idSetInterval = setInterval( () => { this.moveFurry() }, 400);
+      this.idSetInterval = setInterval( () => { this.moveFurry() }, 300);
       this.scoreDisplay.innerText = this.scoreFormat(0);
       this.hideGameOverCaption();
       this.disableStartButton(); 
