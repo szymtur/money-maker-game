@@ -4,6 +4,9 @@ let Furry = require ('./furry.js');
 //konstruktor gry
 function Game(){
    this.board = document.querySelectorAll('#game_board div');
+   this.scoreDisplay = document.querySelector('h2');
+   this.startButton = document.querySelector('#start');
+   this.gameOverCaption = document.querySelector('#over');
    this.furry = new Furry();
    this.coin = new Coin();
    this.coinSound = new Audio ('sounds/coin.wav');
@@ -85,7 +88,7 @@ function Game(){
          this.coinSound.volume = 1;
          this.coinSound.play();
          this.score ++;
-         document.querySelector('h2').innerText = this.scoreFormat(this.score);
+         this.scoreDisplay.innerText = this.scoreFormat(this.score);
          this.coin = new Coin();
          this.showCoin();
       }
@@ -106,26 +109,22 @@ function Game(){
 
    //pokazuje napis "game over"
    this.showGameOverCaption = function(){
-      let gameOverCaption = document.querySelector('#over');
-      gameOverCaption.classList.remove('invisible');
+      this.gameOverCaption.classList.remove('invisible');
    }
 
    //ukrywa napis "game over"
    this.hideGameOverCaption = function(){
-      let gameOverCaption = document.querySelector('#over');
-      gameOverCaption.classList.add('invisible');
+      this.gameOverCaption.classList.add('invisible');
    }
 
    //aktywuje przycisk "start game"
-   this.enableStartButton = function(){
-      let startButton = document.querySelector('#start');
-      startButton.disabled = false;
+   this.enableStartButton = function(){ 
+      this.startButton.disabled = false;
    }
 
    //dezaktywuje przycisk "start game"
    this.disableStartButton = function(){
-      let startButton = document.querySelector('#start');
-      startButton.disabled = true;
+      this.startButton.disabled = true;
    }
    
    //koniec gry - gdy Furry zderzy się z krawędzią planszy
@@ -143,6 +142,7 @@ function Game(){
    //wprawienie Furry'ego w ruch
    this.startGame = function(){
       this.idSetInterval = setInterval( () => { this.moveFurry() }, 400);
+      this.scoreDisplay.innerText = this.scoreFormat(0);
       this.hideGameOverCaption();
       this.disableStartButton(); 
    };
