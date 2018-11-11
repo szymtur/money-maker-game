@@ -1,6 +1,7 @@
 let Coin = require ('./coin.js');
 let Furry = require ('./furry.js');
 
+//konstruktor gry
 function Game(){
    this.board = document.querySelectorAll('#game_board div');
    this.furry = new Furry();
@@ -8,10 +9,12 @@ function Game(){
    this.coinSound = new Audio ('sounds/coin.wav');
    this.score = 0;
 
+   //metoda do przelicznia pozycji Furry'ego i monety z x i y (0-9) na numer pola tablicy (0-99)
    this.index = function(x, y){ 
       return x + (y * 10); 
    };
 
+   //pokazuje Furry'ego na planszy
    this.showFurry = function(){
       this.hideVisibleFurry();
       if (this.board[this.index(this.furry.x, this.furry.y)] != null) {
@@ -19,10 +22,12 @@ function Game(){
       }
    };
 
+   //pokazuje monetę na planszy
    this.showCoin = function(){
       this.board[this.index(this.coin.x, this.coin.y)].classList.add('coin');
    };
 
+   //poruszanie się Furry'ego
    this.moveFurry = function(){
       if(this.furry.direction === 'right'){ 
          this.furry.x = this.furry.x + 1; 
@@ -36,12 +41,12 @@ function Game(){
       else if(this.furry.direction === 'down'){
          this.furry.y = this.furry.y - 1;
       }
-
       this.showFurry();
       this.checkCoinCollision();
       this.gameOver();
    };
 
+   //sterowanie klawiaturą
    this.turnFurry = function(event){
       switch (event.which) { 
          case 37: 
@@ -59,6 +64,7 @@ function Game(){
       }
    };
 
+   //usuwanie klonów Furry'ego
    this.hideVisibleFurry = function(){
       let visibleFurry = document.querySelector('.furry');
       if(visibleFurry != null){
@@ -66,23 +72,26 @@ function Game(){
       }
    };
 
+   //usuwanie monety
    this.hideVisibleCoin = function(){
       this.board[this.index(this.coin.x, this.coin.y)].classList.remove('coin');
    }
 
+   //zderzenie z monetą
    this.checkCoinCollision = function(){
       if(this.furry.x === this.coin.x && this.furry.y === this.coin.y){
          console.log('bang');
-         this.board[this.index(this.coin.x, this.coin.y)].classList.remove('coin');
-         this.coin = new Coin();
+         this.hideVisibleCoin();
          this.coinSound.volume = 1;
          this.coinSound.play();
-         this.showCoin();
          this.score ++;
          document.querySelector('h2').innerText = this.scoreFormat(this.score);
+         this.coin = new Coin();
+         this.showCoin();
       }
    };
 
+   //ustawia trzycyfrowy format punktacji
    this.scoreFormat = function(score){
       if(score.toString().length == 1){
          return `00${score}`;
@@ -95,26 +104,31 @@ function Game(){
       }
    }
 
+   //pokazuje napis "game over"
    this.showGameOverCaption = function(){
       let gameOverCaption = document.querySelector('#over');
       gameOverCaption.classList.remove('invisible');
    }
 
+   //ukrywa napis "game over"
    this.hideGameOverCaption = function(){
       let gameOverCaption = document.querySelector('#over');
       gameOverCaption.classList.add('invisible');
    }
 
+   //aktywuje przycisk "start game"
    this.enableStartButton = function(){
       let startButton = document.querySelector('#start');
       startButton.disabled = false;
    }
 
+   //dezaktywuje przycisk "start game"
    this.disableStartButton = function(){
       let startButton = document.querySelector('#start');
       startButton.disabled = true;
    }
    
+   //koniec gry - gdy Furry zderzy się z krawędzią planszy
    this.gameOver = function(){
       if(this.furry.x < 0 || this.furry.x > 9 || this.furry.y < 0 || this.furry.y > 9){
          console.log('game over');
@@ -126,8 +140,9 @@ function Game(){
       }
    }
 
+   //wprawienie Furry'ego w ruch
    this.startGame = function(){
-      this.idSetInterval = setInterval( () => { this.moveFurry() }, 500);
+      this.idSetInterval = setInterval( () => { this.moveFurry() }, 400);
       this.hideGameOverCaption();
       this.disableStartButton(); 
    };
