@@ -6,4 +6,4 @@ function Furry() {
    this.direction = 'right';
 }
 
-module.exports = Furry;
+export default Furry;

@@ -5,4 +5,4 @@ function Coin() {
    this.y = Math.floor(Math.random() * 10);
 }
 
-module.exports = Coin;
+export default Coin;

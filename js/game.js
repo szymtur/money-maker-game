@@ -1,5 +1,5 @@
-let Coin = require ('./coin.js');
-let Furry = require ('./furry.js');
+import Coin from './coin.js';
+import Furry from './furry.js';
 
 //konstruktor gry
 function Game(){
@@ -141,12 +141,11 @@ function Game(){
 
    //wprawienie Furry'ego w ruch
    this.startGame = function(){
-      this.idSetInterval = setInterval( () => { this.moveFurry() }, 300);
+      this.idSetInterval = setInterval( () => { this.moveFurry() }, 350);
       this.scoreDisplay.innerText = this.scoreFormat(0);
       this.hideGameOverCaption();
       this.disableStartButton(); 
    };
 }
 
-// module.exports = Game;
 export default Game;
