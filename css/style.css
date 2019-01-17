@@ -16,6 +16,24 @@
   font-style: normal;
 }
 
+@keyframes pulse {
+    0% {
+      background-size: 80%;
+    }
+    25% {
+      background-size: 82%;
+    }
+    50% {
+      background-size: 84%;
+    }
+    75% {
+      background-size: 82%; 
+    }
+    100% {
+      background-size: 80%;
+    }
+  }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -45,24 +63,6 @@ body {
   animation-iteration-count: infinite;
   animation-duration: 1500ms; 
   animation-timing-function: ease;
-}
-
-@keyframes pulse {
-  0% {
-    background-size: 80%;
-  }
-  25% {
-    background-size: 82%;
-  }
-  50% {
-    background-size: 84%;
-  }
-  75% {
-    background-size: 82%; 
-  }
-  100% {
-    background-size: 80%;
-  }
 }
 
 .invisible {
@@ -157,7 +157,7 @@ body {
   margin-bottom: 0.5em;
 }
 
-#game_container #game_panel #score h2 {
+#game_container #game_panel #score #counter {
   font-family: 'Alarm Clock Regular', sans-serif;
   font-size: 4em;
   color: #5a005a;

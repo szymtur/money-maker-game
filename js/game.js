@@ -4,7 +4,7 @@ import Furry from './furry.js';
 //konstruktor gry
 function Game(){
    this.board = document.querySelectorAll('#game_board div');
-   this.scoreDisplay = document.querySelector('h2');
+   this.scoreDisplay = document.querySelector('#counter');
    this.startButton = document.querySelector('#start');
    this.gameOverCaption = document.querySelector('#over');
    this.furry = new Furry();
@@ -83,15 +83,14 @@ function Game(){
    //zderzenie z monetą
    this.checkCoinCollision = function(){
       if(this.furry.x === this.coin.x && this.furry.y === this.coin.y){
-         console.log('bang');
          this.hideVisibleCoin();
-         this.coinSound.volume = 1;
          this.coinSound.play();
          this.score ++;
          this.scoreDisplay.innerText = this.scoreFormat(this.score);
          this.coin = new Coin();
          this.showCoin();
-      }
+         console.log('bang');
+        }
    };
 
    //ustawia trzycyfrowy format punktacji
