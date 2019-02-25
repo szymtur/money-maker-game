@@ -1,6 +1,6 @@
 # Money Maker Game
 
-![](image/layout.png)
+![](images/layout.png)
 
 ### Link:
 [https://szymtur.github.io/kalkulator](https://szymtur.github.io/kalkulator)
