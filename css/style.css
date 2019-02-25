@@ -1,19 +1,19 @@
 @font-face {
-  font-family: 'Alarm Clock Regular';
-  src: 
-    url('../fonts/alarm_clock-webfont.woff2') format('woff2'),
-    url('../fonts/alarm_clock-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Alarm Clock Regular';
+    src: 
+        url('../fonts/alarm_clock-webfont.woff2') format('woff2'),
+        url('../fonts/alarm_clock-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Nova Square';
-  src: 
-    url('../fonts/novasquare-webfont.woff2') format('woff2'),
-    url('../fonts/novasquare-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Nova Square';
+    src: 
+        url('../fonts/novasquare-webfont.woff2') format('woff2'),
+        url('../fonts/novasquare-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @keyframes pulse {
@@ -32,168 +32,169 @@
     100% {
       background-size: 80%;
     }
-  }
+}
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
-  position: relative;
-  background: #d3d3d3;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background: #d3d3d3;
+    user-select: none;
 }
 
 .furry {
-  background-image: url('../images/furry.png');
-  background-repeat: no-repeat;
-  background-size: 95%;
-  background-position: center;
+    background-image: url('../images/furry.png');
+    background-repeat: no-repeat;
+    background-size: 95%;
+    background-position: center;
 }
 
 .coin {
-  background-image: url('../images/coin.png');
-  background-repeat: no-repeat;
-  background-size: 80%;
-  background-position: center;
-  animation-name: pulse;
-  animation-iteration-count: infinite;
-  animation-duration: 1500ms; 
-  animation-timing-function: ease;
+    background-image: url('../images/coin.png');
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    animation-name: pulse;
+    animation-iteration-count: infinite;
+    animation-duration: 1500ms; 
+    animation-timing-function: ease;
 }
 
 .invisible {
-  display: none;
+    display: none;
 }
 
 #info_caption {
-  font-size: 7vw;
-  font-family: 'Nova Square';
-  text-transform: uppercase;
-  position: relative;
-  text-align: center;
-  top: 40%;
-  -webkit-transform: translateY(-40%);
-      -ms-transform: translateY(-40%);
-          transform: translateY(-40%);
-  color: #ff0000;
+    font-size: 7vw;
+    font-family: 'Nova Square';
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+    top: 40%;
+    -webkit-transform: translateY(-40%);
+        -ms-transform: translateY(-40%);
+            transform: translateY(-40%);
+    color: #ff0000;
 }
 
 #game_container {
-  position: absolute;
-  top: 50%;
-  left: 48%;
-  transform: translate(-50%, -50%);
-  width: 1200px;
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
 }
 
 #game_container #game_logo {
-  display: inline-block;
-  width: 378px;
-  height: 554px;
-  background-image: url('../images/logo.jpg');
-  background-size: cover;
+    display: inline-block;
+    width: 378px;
+    height: 554px;
+    background-image: url('../images/logo.jpg');
+    background-size: cover;
 }
 
 #game_container #game_board {
-  width: 554px;
-  height: 554px;
-  display: inline-block;
-  margin-left: 20px;
-  margin-right: 40px;
-  border-radius: 10px;
-  border: 2px solid #000000;
-  box-shadow: 1px 1px 5px 1px #000000;
-  background: #ffffff;
+    width: 554px;
+    height: 554px;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 40px;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    box-shadow: 1px 1px 5px 1px #000000;
+    background: #ffffff;
 }
 
 #game_container #game_board  > div {    
-  border: 1px solid #000000;
-  float: left;
-  width: 55px;
-  height: 55px;
+    border: 1px solid #000000;
+    float: left;
+    width: 55px;
+    height: 55px;
 }
 
 #game_container #game_board  > div:first-of-type {
-  border-top-left-radius: 7px;
+    border-top-left-radius: 7px;
 }
 
 #game_container #game_board  > div:nth-of-type(10) {
-  border-top-right-radius: 7px;
+    border-top-right-radius: 7px;
 }
 
 #game_container #game_board  > div:nth-of-type(91) {
-  border-bottom-left-radius: 7px;
+    border-bottom-left-radius: 7px;
 }
 
 #game_container #game_board  > div:last-of-type {
-  border-bottom-right-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 
 #game_container #game_panel {
-  display: inline-block;
-  position: relative;
-  width: 200px;
-  height: 554px;
-  border: 3px solid #000000;
-  border-radius: 10px;
-  background: #ffffff;
-  box-shadow: 1px 1px 5px 1px #000000;
-  font-family: 'Nova Square', sans-serif;
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 554px;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 1px 1px 5px 1px #000000;
+    font-family: 'Nova Square', sans-serif;
 }
 
 #game_container #game_panel #score {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  padding-top: 2em;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding-top: 2em;
 }
 
 #game_container #game_panel #score h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.5em;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
 }
 
 #game_container #game_panel #score #counter {
-  font-family: 'Alarm Clock Regular', sans-serif;
-  font-size: 4em;
-  color: #5a005a;
+    font-family: 'Alarm Clock Regular', sans-serif;
+    font-size: 4em;
+    color: #5a005a;
 }
 
 #game_container #game_panel #over {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 40%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 40%;
 }
 
 #game_container #game_panel #over h3 {
-  font-size: 3em;
+    font-size: 3em;
 }
 
 #game_container #game_panel #over h4 {
-  font-size: 3.5em;
+    font-size: 3.5em;
 }
 
 #game_container #game_panel #start {
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  outline: none;
-  border: 3px solid #000000;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    outline: none;
+    border: 3px solid #000000;
 	background: linear-gradient(#ff9e9e, #ff0000);
-  box-shadow: 1px 1px 5px 1px #000000;
-  color: #ffffff;
-  font-family: 'Nova Square', sans-serif;
-  font-size: 1.2em;
-  transition: all 0.5s;
+    box-shadow: 1px 1px 5px 1px #000000;
+    color: #ffffff;
+    font-family: 'Nova Square', sans-serif;
+    font-size: 1.2em;
+    transition: all 0.5s;
 }
 
 #game_container #game_panel #start:hover {
@@ -202,5 +203,5 @@ body {
 
 #game_container #game_panel #start:disabled {
 	background: linear-gradient(#b8b8b8, #666666);
-  color: #1d1d1d;
+    color: #1d1d1d;
 }
