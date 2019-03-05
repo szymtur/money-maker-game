@@ -18,24 +18,43 @@
 
 @keyframes pulse {
     0% {
-      background-size: 80%;
+    	background-size: 80%;
     }
     25% {
-      background-size: 82%;
+      	background-size: 82%;
     }
     50% {
-      background-size: 84%;
+      	background-size: 84%;
     }
     75% {
-      background-size: 82%; 
+      	background-size: 82%; 
     }
     100% {
-      background-size: 80%;
+      	background-size: 80%;
+    }
+}
+
+@-webkit-keyframes pulse {
+    0% {
+      	background-size: 80%;
+    }
+    25% {
+      	background-size: 82%;
+    }
+    50% {
+      	background-size: 84%;
+    }
+    75% {
+      	background-size: 82%; 
+    }
+    100% {
+      	background-size: 80%;
     }
 }
 
 * {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -45,7 +64,10 @@ body {
     width: 100vw;
     position: relative;
     background: #d3d3d3;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .furry {
@@ -60,10 +82,14 @@ body {
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: center;
-    animation-name: pulse;
-    animation-iteration-count: infinite;
-    animation-duration: 1500ms; 
-    animation-timing-function: ease;
+    -webkit-animation-name: pulse;
+            animation-name: pulse;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1500ms;
+            animation-duration: 1500ms; 
+    -webkit-animation-timing-function: ease; 
+            animation-timing-function: ease;
 }
 
 .invisible {
@@ -78,7 +104,6 @@ body {
     text-align: center;
     top: 40%;
     -webkit-transform: translateY(-40%);
-        -ms-transform: translateY(-40%);
             transform: translateY(-40%);
     color: #ff0000;
 }
@@ -87,7 +112,8 @@ body {
     position: absolute;
     top: 50%;
     left: 48%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     width: 1200px;
 }
 
@@ -107,7 +133,8 @@ body {
     margin-right: 40px;
     border-radius: 10px;
     border: 2px solid #000000;
-    box-shadow: 1px 1px 5px 1px #000000;
+    -webkit-box-shadow: 1px 1px 5px 1px #000000;
+            box-shadow: 1px 1px 5px 1px #000000;
     background: #ffffff;
 }
 
@@ -142,7 +169,8 @@ body {
     border: 3px solid #000000;
     border-radius: 10px;
     background: #ffffff;
-    box-shadow: 1px 1px 5px 1px #000000;
+    -webkit-box-shadow: 1px 1px 5px 1px #000000;
+            box-shadow: 1px 1px 5px 1px #000000;
     font-family: 'Nova Square', sans-serif;
 }
 
@@ -183,25 +211,31 @@ body {
     position: absolute;
     bottom: 10%;
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
     height: 100px;
     width: 100px;
     border-radius: 50%;
     outline: none;
     border: 3px solid #000000;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ff9e9e), to(#ff0000));
 	background: linear-gradient(#ff9e9e, #ff0000);
-    box-shadow: 1px 1px 5px 1px #000000;
+    -webkit-box-shadow: 1px 1px 5px 1px #000000;
+            box-shadow: 1px 1px 5px 1px #000000;
     color: #ffffff;
     font-family: 'Nova Square', sans-serif;
     font-size: 1.2em;
+    -webkit-transition: all 0.5s;
     transition: all 0.5s;
 }
 
 #game_container #game_panel #start:hover {
+	background: -webkit-gradient(linear, left top, left bottom, from(#97801a), to(#e3be11));
 	background: linear-gradient(#97801a, #e3be11);
 }
 
 #game_container #game_panel #start:disabled {
+	background: -webkit-gradient(linear, left top, left bottom, from(#b8b8b8), to(#666666));
 	background: linear-gradient(#b8b8b8, #666666);
     color: #1d1d1d;
 }
