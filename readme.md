@@ -3,7 +3,7 @@
 ![](images/layout.png)
 
 ### Link:
-[https://szymtur.github.io/kalkulator](https://szymtur.github.io/kalkulator)
+[https://szymtur.github.io/money-maker-game](https://szymtur.github.io/money-maker-game)
 
 ### Description:
 
