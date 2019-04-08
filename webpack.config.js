@@ -19,10 +19,10 @@ module.exports = {
                         presets: [
                             ['@babel/preset-env', {targets: {browsers: ['> 3%', 'last 2 versions']} }],
                         ]
-                    }    
+                    }
                 }
             }
         ]
     }
-}  
+}
 
