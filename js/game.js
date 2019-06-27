@@ -131,7 +131,7 @@ class Game {
         this.gameOver = function () {
             if (this.furry.x < 0 || this.furry.x > 9 || this.furry.y < 0 || this.furry.y > 9) {
                 console.log('game over');
-                clearInterval(this.idSetInterval);
+                clearInterval(this.setIntervalId);
                 this.hideVisibleFurry();
                 this.hideVisibleCoin();
                 this.showGameOverCaption();
@@ -141,7 +141,7 @@ class Game {
 
         //wprawienie Furry'ego w ruch
         this.startGame = function () {
-            this.idSetInterval = setInterval(() => { this.moveFurry(); }, 350);
+            this.setIntervalId = setInterval(() => { this.moveFurry(); }, 350);
             this.scoreDisplay.innerText = this.scoreFormat(0);
             this.hideGameOverCaption();
             this.disableStartButton();

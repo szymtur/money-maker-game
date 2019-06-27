@@ -2,17 +2,19 @@ import Game from "./game.js";
 import isMobile from "./mobile.js";
 
 document.addEventListener("DOMContentLoaded", function() {
-    let gameContainer = document.querySelector('#game_container');
-    let infoCaption = document.querySelector('#info_caption')
-    let startButton = document.querySelector('#start');
+    const gameContainer = document.querySelector('#game_container');
+    const mobileInfoCaption = document.querySelector('#mobile_info_caption');
+    const desktopInfoCaption = document.querySelector('#desktop_info_caption');
+    const startButton = document.querySelector('#start');
 
     if (isMobile.any()) {
-        gameContainer.classList.add('invisible');
-        infoCaption.classList.remove('invisible');
+        gameContainer.setAttribute('style', 'display: none');
+        desktopInfoCaption.setAttribute('style', 'display: none');
+        mobileInfoCaption.setAttribute('style', 'display: block');
     }
 
     startButton.addEventListener('click', function() {
-        let newGame = new Game();
+        const newGame = new Game();
 
         newGame.showFurry();
         newGame.showCoin();
