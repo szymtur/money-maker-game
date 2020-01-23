@@ -1,4 +1,7 @@
-//konstruktor monety
+/*
+    Coin Constructor
+*/
+
 class Coin {
     constructor() {
         this.x = Math.floor(Math.random() * 10);

@@ -1,8 +1,12 @@
 {
-    "name": "furry_game",
+    "name": "money_maker_game",
     "version": "1.0.0",
     "description": "",
     "main": "webpack.config.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/szymtur/money-maker-game.git"
+    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "webpack"

@@ -1,4 +1,7 @@
-//konstruktor Furry'ego
+/*
+    Furry Constructor
+*/
+
 class Furry {
     constructor() {
         this.x = 0;

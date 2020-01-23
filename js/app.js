@@ -14,14 +14,18 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     startButton.addEventListener('click', function() {
+
+        this.blur();    // removes focus from start button
+
         const newGame = new Game();
 
         newGame.showFurry();
         newGame.showCoin();
         newGame.startGame();
+ 
+        document.addEventListener('keydown', function(event) {
+            newGame.turnFurry(event);
+        });
 
-        document.addEventListener('keydown', function(event) { 
-            newGame.turnFurry(event); 
-        })
-    })
-})
+    });
+});

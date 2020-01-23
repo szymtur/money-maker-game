@@ -105,13 +105,17 @@ body {
     display: none;
 }
 
+.invisible {
+    visibility: hidden;
+}
+
 #game_container {
     position: absolute;
     top: 50%;
     left: 48%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-    width: 1200px;
+    width: 1210px;
 }
 
 #game_container #game_logo {
@@ -123,23 +127,38 @@ body {
 }
 
 #game_container #game_board {
-    width: 554px;
-    height: 554px;
+    width: 550px;
+    height: 550px;
     display: inline-block;
     margin-left: 20px;
     margin-right: 40px;
     border-radius: 10px;
-    border: 2px solid #000000;
     -webkit-box-shadow: 1px 1px 5px 1px #000000;
             box-shadow: 1px 1px 5px 1px #000000;
     background: #ffffff;
 }
 
-#game_container #game_board  > div {
+#game_container #game_board > div {
     border: 1px solid #000000;
     float: left;
-    width: 55px;
-    height: 55px;
+    width: 10%;
+    height: 10%;
+}
+
+#game_container #game_board div:nth-child(-n+10) {
+    border-top: 3px solid #000000;
+}
+
+#game_container #game_board div:nth-child(n+91) {
+    border-bottom: 3px solid #000000;
+}
+
+#game_container #game_board div:nth-child(10n+1) {
+    border-left: 3px solid #000000;
+}
+
+#game_container #game_board div:nth-child(10n) {
+    border-right: 3px solid #000000;
 }
 
 #game_container #game_board > div:first-of-type {
@@ -162,7 +181,7 @@ body {
     display: inline-block;
     position: relative;
     width: 200px;
-    height: 554px;
+    height: 550px;
     border: 3px solid #000000;
     border-radius: 10px;
     background: #ffffff;
@@ -214,7 +233,7 @@ body {
     width: 100px;
     border-radius: 50%;
     outline: none;
-    border: 3px solid #000000;
+    border: 2px solid #000000;
     background: -webkit-gradient(linear, left top, left bottom, from(#ff9e9e), to(#ff0000));
     background: linear-gradient(#ff9e9e, #ff0000);
     -webkit-box-shadow: 1px 1px 5px 1px #000000;
@@ -224,6 +243,10 @@ body {
     font-size: 1.2em;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+#game_container #game_panel #start::-moz-focus-inner {
+    border: 0;
 }
 
 #game_container #game_panel #start:hover {
