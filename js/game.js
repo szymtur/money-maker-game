@@ -14,9 +14,9 @@ class Game {
 
         this.coinSound = new Audio('sounds/coin.wav');
         this.furry = new Furry();
+        this.coin = new Coin();
 
         this.score = 0;
-        this.coinPosition = 0;
     }
 
     /* converting Furry's position from x and y (0-9) to the board field number (0-99) */
@@ -35,10 +35,10 @@ class Game {
 
     /* shows coin on the board */
     showCoin() {
-        this.coinPosition = new Coin(this.coinPosition).newPosition;
+        this.coin.newPosition();
 
-        if (this.board[this.coinPosition]) {
-            this.board[this.coinPosition].classList.add('coin');
+        if (this.board[this.coin.position]) {
+            this.board[this.coin.position].classList.add('coin');
         }
     };
 
@@ -92,12 +92,12 @@ class Game {
 
     /* removes a coin from the board */
     hideVisibleCoin() {
-        this.board[this.coinPosition].classList.remove('coin');
+        this.board[this.coin.position].classList.remove('coin');
     };
 
     /* coin collision handling */
     checkCoinCollision() {
-        if (this.coinPosition === this.index(this.furry.x, this.furry.y)) {
+        if (this.coin.position === this.index(this.furry.x, this.furry.y)) {
 
             this.coinSound.play().then(() => {
                 this.score++;

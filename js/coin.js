@@ -3,12 +3,11 @@
 */
 
 class Coin {
-    constructor(position) {
-        this.position = position;
-        this.newPosition = this.execute();
+    constructor() {
+        this.position = 0;
     }
 
-    execute() {
+    newPosition() {
         const notAllowed = [this.position, this.position + 1, this.position + 10, this.position - 1, this.position - 10];
 
         let newCoinPosition;
@@ -18,7 +17,7 @@ class Coin {
 
         } while (newCoinPosition === undefined || notAllowed.includes(newCoinPosition));
 
-        return newCoinPosition;
+        this.position = newCoinPosition;
     }
 }
 
